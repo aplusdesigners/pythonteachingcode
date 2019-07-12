@@ -16,5 +16,9 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route('/lee/')
+def lee():
+    return render_template("baldwin.html")
+
 if __name__=="__main__":
     app.run(debug=True)

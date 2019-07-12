@@ -9,6 +9,7 @@ How would we add more buttons?
 
 from tkinter import *
 from math import sqrt as sqr
+from math import sin
 
 
 class Application(Frame):
@@ -83,6 +84,7 @@ class Application(Frame):
         e = e.replace("²", "**2")
         e = e.replace("^", "**")
         e = e.replace("÷", "/")
+        e = e.replace("Sin","sin")
 
         try:
             ans = eval(e)
@@ -162,6 +164,15 @@ class Application(Frame):
         self.c_bttn = Button(self, text='←', width=9, height=3, bg='LightBlue', fg='red',command=lambda: self.clear())
         self.c_bttn.grid(row=1, column=5 )
 
+        self.sin_bttn = Button(self, text="sin", width=9, height=3, command=lambda: self.add_chr('sin'))
+        self.sin_bttn.grid(row=2, column=6)
+
+        self.sin_bttn = Button(self, text="cos", width=9, height=3, command=lambda: self.add_chr('cos'))
+        self.sin_bttn.grid(row=3, column=6)
+
+        self.sin_bttn = Button(self, text="tan", width=9, height=3, command=lambda: self.add_chr('tan'))
+        self.sin_bttn.grid(row=4, column=6)
+
         self.add_bttn = Button(self, text="+", width=9, height=3,bg='LightBlue', fg='red', command=lambda: self.add_chr('+'))
         self.add_bttn.grid(row=4, column=3)
 
@@ -195,7 +206,7 @@ class Application(Frame):
         self.six_bttn = Button(self, text="6", width=9, height=3,bg='LightBlue', fg='red', command=lambda: self.add_chr(6))
         self.six_bttn.grid(row=2, column=2)
 
-        self.one_bttn = Button(self, text="1", width=9, height=3,bg='LightBlue', fg='red', command=lambda: self.add_chr(1))
+        self.one_bttn = Button(self, text="LEE", width=9, height=3,bg='LightBlue', fg='red', command=lambda: self.add_chr("Lee"))
         self.one_bttn.grid(row=3, column=0)
 
         self.two_bttn = Button(self, text="DT", width=9, height=3, bg='LightBlue', fg='red',command=lambda: self.add_chr("Thomas"))
